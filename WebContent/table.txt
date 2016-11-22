@@ -1,0 +1,109 @@
+    table=1;
+
+step=1;
+
+ create database student;
+
+step=2;
+
+  use student;
+
+step=3;
+  
+  ------------------------------------+
+ children | CREATE TABLE `children` (
+ `studentid` int(11) NOT NULL auto_increment,
+ `studentname` varchar(50) default NULL,
+ `studentaddress` varchar(50) default NULL,
+ `studentage` int(2) default NULL,
+ PRIMARY KEY  (`studentid`)
+ ENGINE=InnoDB DEFAULT CHARSET=latin1 |llll
+
+step=4;
+
+  (i):insert into children (studentname,studentaddress,studentage)values
+  ('selvi','rayavaram','21');
+
+  (ii):insert into children (studentname,studentaddress,studentage)values
+  ('parameshwari','merpanaikadu','18');
+
+step=5;
+  select   * from children;
+
+  | studentid | studentname  | studentaddress | studentage |
++-----------+--------------+----------------+------------+
+|         1 | selvi        | rayavaram      |         21 |
+|         2 | parameshwari | merpanaikadu   |         18 |
++-----------+--------------+----------------+------------+
+
+step=6;
+
+    update children set studentname="deepika",studentaddress="arimalam",studentage="18" where studentid="1";
++-----------+--------------+----------------+------------+
+| studentid | studentname  | studentaddress | studentage |
++-----------+--------------+----------------+------------+
+|         1 | deepika      | arimalam       |         18 |
+|         2 | parameshwari | merpanaikadu   |         18 |
++-----------+--------------+----------------+------------+
+
+    table=2;
+
+step=1;
+---------------------------+
+ employee | CREATE TABLE `employee` (
+ `empid` int(11) default NULL,
+ `empname` varchar(50) default NULL,
+ `empaddress` varchar(30) default NULL
+ ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+
+step=2;
+
+  
+  (i):insert into employee values(1,'kiruthika','rayavaram');
+
+  (ii):insert into employee values(2,'selvi','rayavaram');
+
+step=3;
+
+  select * from employee;
+
+   +-------+-----------+------------+
+ | empid | empname   | empaddress |
+ +-------+-----------+------------+
+ |     1 | kiruthika | rayavaram  |
+ |     2 | selvi     | rayavaram  |
+ |     1 | kiruthika | rayavaram  |
+ +-------+-----------+------------+
+
+step=4;
+
+  alter table employee add(phoneno varchar(10));
+
+  mysql> select * from employee;
++-------+-----------+------------+---------+
+| empid | empname   | empaddress | phoneno |
++-------+-----------+------------+---------+
+|     1 | kiruthika | rayavaram  | NULL    |
+|     2 | selvi     | rayavaram  | NULL    |
+|     1 | kiruthika | rayavaram  | NULL    |
++-------+-----------+------------+---------+
+
+step=5;
+
+  update employee set phoneno='9786630384' where empid=2;
+
+  mysql> select * from employee;
++-------+-----------+------------+------------+
+| empid | empname   | empaddress | phoneno    |
++-------+-----------+------------+------------+
+|     1 | kiruthika | rayavaram  | NULL       |
+|     2 | selvi     | rayavaram  | 9786630384 |
+|     1 | kiruthika | rayavaram  | NULL       |
++-------+-----------+------------+------------+
+
+
+
+
+
+
+
