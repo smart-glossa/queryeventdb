@@ -1,0 +1,42 @@
+<html>
+<head>
+	
+	<script src="js/jquery-1.12.3.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("img").mouseenter(function(){
+			$("img").after("<p>mouseover and mouseenter function is same reaction</p>");
+			$("img").css("width","100px");
+		});
+		$("img").mouseleave(function(){
+			$("img").after("<p style='color:red;'>mouseout and mouseleave function is same reaction</p>");
+				$("img").css("width","50px");
+
+		});
+		$("h2").hover(function(){
+			$(this).css("font-size","40");
+       },function(){
+       	$(this).css("font-size","30");
+       });
+       $("input").focusin(function(){
+       	$("input").css("background-color","yellow");
+       });
+       $("input").focusout(function(){
+       	$("input").css("background-color","pink");
+       });
+       $("#a").scroll(function(){
+        $(span).text(x+=1);
+
+       });
+	});
+
+	</script>
+</head>
+<body>
+</body>
+<img src="images/smiley.gif"/>
+<h2>smartglossa</h2>
+<h2>center</h2>
+<input type="text"/>
+</body>
+</html>
